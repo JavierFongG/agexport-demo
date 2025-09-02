@@ -3,6 +3,7 @@ from fastapi.responses import PlainTextResponse
 import httpx 
 
 import os 
+import asyncio
 
 app = FastAPI()
 
@@ -21,7 +22,7 @@ def scripted_response(paciente_text):
     conversation = [
         ("Hola, me siento muy mal", "Hola 👋, lamento escuchar eso. Estoy aquí para ayudarte a encontrar un centro médico cercano. ¿Podrías contarme qué síntomas tienes?"),
         ("Tengo un dolor fuerte en el pecho y me cuesta respirar", "Entiendo. Gracias por decírmelo. Estos síntomas pueden ser graves, así que es importante actuar rápido. ¿Me puedes indicar tu ubicación actual o dónde te encuentras en Guatemala?"),
-        ("Estoy en la zona 10 de la Ciudad de Guatemala, cerca del hotel Camino Real", "Gracias por la información. Por tus síntomas y tu ubicación, te recomiendo acudir de inmediato al Hospital Herrera Llerandi, que cuenta con un área de emergencias equipada para atender problemas cardíacos.\n📍 Dirección: 6a. Avenida 8-71, zona 10, Ciudad de Guatemala.\n📞 Teléfono de emergencias: +502 2384-5959.\n"),
+        ("Estoy en la zona 10 de la Ciudad de Guatemala, cerca del hotel Camino Real", "Gracias por la información. Por tus síntomas y tu ubicación, te recomiendo acudir de inmediato al Centro Médico, que cuenta con un área de emergencias equipada para atender problemas cardíacos.\n📍 Dirección: 6a. Avenida 3-47, zona 10, Ciudad de Guatemala.\n📞 Teléfono de emergencias: +502 2319-4600.\n Ubicación: https://share.google/VgSoqYSYNbmhLOUvE"),
         ("Gracias, voy para allá", "De nada, espero que te recuperes pronto 🙏. Si necesitas más ayuda en tu estancia en Guatemala, no dudes en escribirme.")
     ]
     
@@ -75,7 +76,7 @@ async def callback(request: Request):
                 # Get the message text
                 text = message.get("text", {}).get("body", "")
                 response = scripted_response(text)
-                
+                await asyncio.sleep(5)
                 try:
                     payload = {
                         "messaging_product": "whatsapp",
