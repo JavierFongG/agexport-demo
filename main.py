@@ -26,7 +26,7 @@ def scripted_response(paciente_text):
         ("UBICACION", "Gracias por la información. Por tus síntomas y tu ubicación, te recomiendo acudir de inmediato al Centro Médico, que cuenta con un área de emergencias equipada para atender problemas cardíacos.\n📍 Dirección: 6a. Avenida 3-47, zona 10, Ciudad de Guatemala.\n📞 Teléfono de emergencias: +502 2319-4600.\n Ubicación: https://share.google/VgSoqYSYNbmhLOUvE"),
         ("Gracias, voy para allá", "De nada, espero que te recuperes pronto 🙏. Si necesitas más ayuda en tu estancia en Guatemala, no dudes en escribirme."),
         # English
-        ("Hi, i'm feeling sick", "Hello 👋, I’m sorry to hear that. I’m here to help you find a nearby medical center. Could you tell me what symptoms you’re experiencing?"),
+        ("Hi, I’m feeling sick", "Hello 👋, I’m sorry to hear that. I’m here to help you find a nearby medical center. Could you tell me what symptoms you’re experiencing?"),
         ("I have severe stomach pain and I’m feeling dizzy", "I understand, thank you for letting me know. Those symptoms can be serious, so it’s important to act quickly. Could you share your current location or where you are in Guatemala?"),
         ("I’m in Guatemala City, near the Hyatt Hotel", "Thanks for the information. Based on your symptoms and location, I recommend you go immediately to Centro Médico, which has a 24/7 emergency department ready to handle urgent cases.\n📍 Address:  6a. Avenida 3-47, zona 10, Ciudad de Guatemala.\n📞 Emergency phone: +502 2319-4600.\n🌐 Map: https://share.google/VgSoqYSYNbmhLOUvE"),
         ("Thank you, I’m heading there now", "You’re welcome, I hope you feel better soon 🙏. If you need more help while you’re in Guatemala, don’t hesitate to message me.")
